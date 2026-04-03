@@ -94,8 +94,3 @@ python test.py
 pip install numpy pandas matplotlib scikit-learn
 ```
 
----
-
-## 作者
-
-黄科海（学号：04230927）
