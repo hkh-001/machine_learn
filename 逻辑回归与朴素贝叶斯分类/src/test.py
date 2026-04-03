@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-path = r"C:\Users\huang\Desktop\machine_learn\逻辑回归与朴素贝叶斯分类\iris.data"
+path = r"..\data\iris.data"
 
 columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 data = pd.read_csv(path, header=None, names=columns)
