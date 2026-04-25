@@ -1,0 +1,36 @@
+# 忽略文档文件（保护隐私）
+*.doc
+*.docx
+
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境
+venv/
+.env/
+.venv/
+
+# IDE 配置
+.vscode/
+.idea/
+*.iml
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 数据压缩包（原始数据已解压到 data/ 目录）
+*.zip
+*.tar.gz
+
+# 临时文件
+*.tmp
+*.log
+pdf_text.txt
+~$*
+
+# Jupyter Notebook 检查点
+.ipynb_checkpoints/

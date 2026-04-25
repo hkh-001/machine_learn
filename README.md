@@ -1,4 +1,4 @@
-# machine_learn
+# 机器学习基础算法实践
 
 本仓库收录了机器学习基础算法的实践项目，涵盖**回归、分类与聚类**三大任务。每个实验均包含完整的数据处理、模型实现、结果评估与可视化，适合作为机器学习入门学习的参考案例。
 
@@ -11,45 +11,69 @@
 ```
 machine_learn/
 ├── README.md                                 # 本文件（项目总览）
+├── .gitignore                                # Git 忽略规则
 │
 ├── 线性回归/                                 # 实验一：线性回归
-│   ├── src/
-│   │   ├── linear.py                         # 主程序（梯度下降 + 正规方程）
-│   │   └── housing.csv                       # California Housing 数据集
-│   ├── dataset/
+│   ├── data/
+│   │   ├── housing.csv                       # California Housing 数据集
 │   │   └── housing_linear.csv                # 备用数据集
-│   └── 黄科海_04230927.docx                  # 实验报告（已 gitignore 忽略）
+│   ├── src/
+│   │   └── linear.py                         # 主程序（梯度下降 + 正规方程）
+│   └── docs/
+│       └── 黄科海_04230927.docx              # 实验报告（已 gitignore 忽略）
 │
 ├── 逻辑回归与朴素贝叶斯分类/                 # 实验二：分类算法
 │   ├── README.md                             # 子项目说明
-│   ├── src/
-│   │   └── test.py                           # 主程序（逻辑回归 + 朴素贝叶斯）
 │   ├── data/
 │   │   ├── iris.data                         # 鸢尾花数据集
 │   │   ├── iris.names                        # 数据集说明
 │   │   ├── bezdekIris.data                   # 备用数据集
-│   │   └── Index
-│   ├── dataset/                              # 数据副本
-│   ├── docs/
-│   │   ├── 实验二 逻辑回归与朴素贝叶斯分类.pdf
-│   │   └── 黄科海_04230927.docx              # 实验报告（已 gitignore 忽略）
-│   └── 实验二 逻辑回归与朴素贝叶斯分类.pdf   # 实验指导书
+│   │   └── Index                             # 索引文件
+│   ├── dataset/                              # 数据副本（保留原结构）
+│   ├── src/
+│   │   └── test.py                           # 主程序（逻辑回归 + 朴素贝叶斯）
+│   └── docs/
+│       ├── 实验二 逻辑回归与朴素贝叶斯分类.pdf
+│       └── 黄科海_04230927.docx              # 实验报告（已 gitignore 忽略）
 │
-└── 聚类分析/                                 # 实验三：聚类算法
-    ├── README.md                             # 子项目说明
-    ├── .gitignore
-    ├── src/
-    │   └── code.py                           # K-Means + GMM-EM 实现
+├── 聚类分析/                                 # 实验三：聚类算法
+│   ├── README.md                             # 子项目说明
+│   ├── .gitignore
+│   ├── data/
+│   │   └── iris.data                         # 鸢尾花数据集
+│   ├── src/
+│   │   └── code.py                           # K-Means + GMM-EM 实现
+│   ├── figures/
+│   │   ├── Figure_1.png                      # K-Means 聚类结果
+│   │   ├── Figure_2.png                      # K-Means 真实标签对比
+│   │   ├── Figure_3.png                      # GMM-EM 聚类结果
+│   │   └── Figure_4.png                      # GMM-EM 真实标签对比
+│   └── docs/
+│       ├── 实验三 聚类分析.pdf               # 实验指导书
+│       └── 实验三 聚类分析(根目录副本).pdf   # 实验指导书副本
+│
+└── 决策树与随机森林分类/                     # 实验四：决策树与集成学习
     ├── data/
-    │   └── iris.data                         # 鸢尾花数据集
-    ├── figures/
-    │   ├── Figure_1.png                      # K-Means 聚类结果
-    │   ├── Figure_2.png                      # K-Means 真实标签对比
-    │   ├── Figure_3.png                      # GMM-EM 聚类结果
-    │   └── Figure_4.png                      # GMM-EM 真实标签对比
+    │   ├── adult.data                        # Adult 数据集
+    │   ├── adult.names                       # 数据集说明
+    │   ├── adult.test                        # 测试集
+    │   ├── adult.zip                         # 原始压缩包
+    │   ├── Index                             # 索引文件
+    │   ├── old.adult.names                   # 旧版数据集说明
+    │   └── adult/                            # 数据副本目录（保留原结构）
+    │       ├── adult.data
+    │       ├── adult.names
+    │       ├── adult.test
+    │       ├── Index
+    │       └── old.adult.names
+    ├── src/
+    │   └── tree.py                           # 主程序
     ├── docs/
-    │   └── 实验三 聚类分析.pdf               # 实验指导书
-    └── 黄科海_04230927.docx                  # 实验报告（已 gitignore 忽略）
+    │   ├── 实验四 决策树与随机森林分类.pdf
+    │   ├── tree.docx                         # 已 gitignore 忽略
+    │   └── 黄科海_04230927.docx              # 已 gitignore 忽略
+    └── results/
+        └── output.txt                        # 运行输出结果
 ```
 
 ---
@@ -112,6 +136,24 @@ python test.py
 ```bash
 cd "聚类分析/src"
 python code.py
+```
+
+---
+
+## 实验四：决策树与随机森林分类
+
+基于 **Adult 数据集**（预测年收入是否超过 5 万美元），实现决策树与随机森林分类算法。
+
+### 核心内容
+- 数据预处理：类别特征编码、缺失值处理
+- 决策树：基于信息增益或基尼指数构建分类树
+- 随机森林：集成多棵决策树进行投票分类
+- 模型评估：准确率、混淆矩阵、特征重要性分析
+
+### 运行方式
+```bash
+cd "决策树与随机森林分类/src"
+python tree.py
 ```
 
 ---
